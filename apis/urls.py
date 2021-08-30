@@ -8,5 +8,4 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('convert/', views.convert, name='convert'),
-#    path('', views.abc, name="abc"),
 ]

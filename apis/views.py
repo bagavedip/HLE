@@ -1,7 +1,12 @@
 from django.shortcuts import render
-import json
 import requests
 from . form import ActionForm
+import pandas as pd
+import pandasvalidation as pv
+import datetime
+from validate_email import validate_email
+import numpy as np
+import re
 
 
 def index(request):
@@ -12,7 +17,10 @@ def index(request):
 def convert(request):
     if request.method == "GET":
         title = request.GET.get('url')
-        print(title)
-        response = requests.get(title)
-        packages_json = response.json()
-        return render(request, 'convert.html', {'resp': packages_json})
+        r = requests.get(title)
+        res = pd.read_excel(title)
+        df = pd.DataFrame(res)
+    return render(request, 'convert.html', {'resp': df})
+
+
+

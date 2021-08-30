@@ -6,6 +6,12 @@ name = "pypi"
 [packages]
 django = "*"
 requests = "*"
+pandas = "*"
+excel2json = "*"
+"yieldfrom.urllib.request" = "*"
+validate-email = "*"
+pandas-validation = "*"
+somewhere = "*"
 
 [dev-packages]
 
